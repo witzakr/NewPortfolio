@@ -5,15 +5,48 @@
   --font-main: "Noto Sans Display", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+/* Header Main */
 
 .header-wrapped {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    padding: 1.5rem 20rem;
+
+    /* start collapsed (thin line) */
+    height: 10px;
+    padding: 0 20rem;
+
     font-family: var(--font-main);
     background-color: var(--primary-bg-color);
+
+    overflow: hidden;
+
+    transition: height 0.3s cubic-bezier(.4, 0, .2, 1),
+                padding 0.3s cubic-bezier(.4, 0, .2, 1),
+                box-shadow 0.3s cubic-bezier(.4, 0, .2, 1);
 }
+
+.header-wrapped > * {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header-wrapped.is-visible {
+    height: auto;              /* let content define height */
+    padding: 2rem 20rem;       /* your original padding */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.header-wrapped.is-visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 .main-nav {
     justify-self: center;
@@ -21,7 +54,7 @@
 
 .main-nav ul {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -70,3 +103,6 @@
 .contact a:hover {
     transform: scale(1.20);
 }
+
+/* Intro Section */
+
