@@ -18,22 +18,62 @@
 
 
 <header class="intro-header">
-    
+  <h2 class="logo"><span id="blue">wit</span><span id="black">zakr</span></h2>
 
-    <h2 class="logo"><span id="blue">wit</span><span id="black">zakr</span></h2>
+  <!-- Desktop nav -->
+  <nav class="intro-nav d-none d-md-block">
+    <ul>
+      <li><a href="#aboutme"><span id="blue">About</span><span id="black"> me</span></a></li>
+      <li><a href="#work"><span id="blue">Featured </span><span id="black">Work</span></a></li>
+      <li><a href="#experience"><span id="blue">Exper</span><span id="black">ience</span></a></li>
+    </ul>
+  </nav>
 
-        <nav class="intro-nav">
-            <ul>
-                <li><a href="#"><span id="blue">About</span><span id="black"> me</span></a></li>
-                <li><a href="#"><span id="blue">Featured </span><span id="black">Work</span></a></li>
-                <li><a href="#"><span id="blue">Exper</span><span id="black">ience</span></a></li>
-            </ul>
-        </nav>
+  <!-- Desktop contact -->
+  <div class="contact d-none d-md-block">
+    <a href="#contact"><span id="blue">Contact</span><span id="black"> Me</span></a>
+  </div>
 
-        <div class="contact">
-            <a href="#"><span id="blue">Contact</span><span id="black"> Me</span></a>
-        </div>
+  <!-- Mobile hamburger (only shows < md) -->
+  <button
+    class="hamburger-btn d-md-none"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#mobileMenu"
+    aria-controls="mobileMenu"
+    aria-label="Open menu"
+  >
+    <span class="hamburger-lines"></span>
+  </button>
 </header>
+
+<!-- Fullscreen Mobile Menu -->
+<div class="offcanvas offcanvas-start mobile-offcanvas d-md-none" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header">
+    <h2 class="logo m-0"><span id="blue">wit</span><span id="black">zakr</span></h2>
+
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body mobile-menu-body">
+    <a class="mobile-link" href="#aboutme" data-bs-dismiss="offcanvas">
+      <span id="blue">About</span><span id="black"> me</span>
+    </a>
+
+    <a class="mobile-link" href="#work" data-bs-dismiss="offcanvas">
+      <span id="blue">Featured </span><span id="black">Work</span>
+    </a>
+
+    <a class="mobile-link" href="#experience" data-bs-dismiss="offcanvas">
+      <span id="blue">Exper</span><span id="black">ience</span>
+    </a>
+
+    <a class="mobile-cta" href="#contact" data-bs-dismiss="offcanvas">
+      <span id="blue">Contact</span><span id="black"> Me</span>
+    </a>
+  </div>
+</div>
+
 
 <section class="aboutme" id="aboutme">
     <div class="img-container">
