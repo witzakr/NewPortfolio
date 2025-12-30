@@ -5,138 +5,21 @@
   --font-main: "Noto Sans Display", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Header Main */
-
-.header-wrapped {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-
-    /* start collapsed (thin line) */
-    height: 30px;
-    padding: 0 20rem;
-
-    font-family: var(--font-main);
-    background-color: var(--primary-bg-color);
-
-    overflow: hidden;
-
-    transition: height 0.3s cubic-bezier(.4, 0, .2, 1),
-                padding 0.3s cubic-bezier(.4, 0, .2, 1),
-                box-shadow 0.3s cubic-bezier(.4, 0, .2, 1);
-}
-
-.header-wrapped > * {
-    opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.header-wrapped.is-visible {
-    height: auto;              /* let content define height */
-    padding: 2rem 20rem;       /* your original padding */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.header-wrapped.is-visible > * {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-.main-nav {
-    justify-self: center;
-}
-
-.main-nav ul {
-    display: flex;
-    gap: 3rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.logo {
-    font-weight: 700;
-    cursor: pointer;
-    color: var(--secondary-text-color);
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
-
-}
-
-.main-nav ul li a {
-    text-decoration: none;
-    color: var(--secondary-text-color);
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
-
-}
-
-.contact a {
-    color: var(--secondary-text-color);
-    text-decoration: none;
-    border: 2px solid whitesmoke;
-    padding: 10px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 6px;
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
-}
-
-.logo:hover {
-    transform: scale(1.20);
-}
-
-.main-nav ul li a:hover {
-    transform: scale(1.20);
-
-}
-
-.contact a:hover {
-    transform: scale(1.20);
-}
-
-/* Intro Section */
-
 .intro {
     min-height: 100vh;
 }
 
-/* Intro header layout */
-.intro-header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-
-    padding: 3rem 20rem;
-    font-family: var(--font-main);
-}
-
-.intro {
-  min-height: 100vh;
-}
 
 /* Intro header layout */
 .intro-header {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-
-  /* responsive padding */
   padding: 3rem clamp(1rem, 6vw, 8rem);
-
   font-family: var(--font-main);
 }
 
-/* Center nav */
+
 .intro-nav {
   justify-self: center;
 }
@@ -147,15 +30,21 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
-  /* allow wrapping before it breaks */
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.intro-header .logo,
-.intro-header .intro-nav a,
-.intro-header .contact a {
+.intro-header .logo {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: clamp(2rem, 1.6vw, 2.5rem);
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.intro-header .intro-nav a {
   color: black;
   text-decoration: none;
   font-weight: bold;
@@ -164,23 +53,43 @@
   transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
 }
 
-.intro-header .logo:hover,
-.intro-header .intro-nav a:hover,
-.intro-header .contact a:hover {
-  transform: scale(1.15);
-}
-
 .intro-header .contact a {
+  color: black;
   border: 2px solid black;
   padding: 10px 14px;
   border-radius: 6px;
   white-space: nowrap;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
 }
 
-#blue { color: var(--primary-bg-color); }
-#black { color: black; }
+/* Hover states */
 
-/* ✅ Mobile layout */
+.intro-header .logo:hover {
+  transform: scale(1.15);
+}
+
+.intro-header .intro-nav a:hover {
+  transform: scale(1.15);
+}
+
+.intro-header .contact a:hover {
+  transform: scale(1.15);
+}
+
+
+#blue { 
+    color: var(--primary-bg-color); 
+}
+
+#black { 
+    color: black; 
+}
+
+/* Mobile layout */
 @media (max-width: 768px) {
   .intro-header {
     grid-template-columns: 1fr;
