@@ -111,3 +111,22 @@
     justify-self: center;
   }
 }
+
+/** About me **/
+
+.aboutme {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    border-radius: 5px;
+    border: 5px solid var(--primary-bg-color);
+}
+
+.img-container img {
+    height: 400px;
+    width: auto; 
+}
