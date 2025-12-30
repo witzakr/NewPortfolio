@@ -120,48 +120,85 @@
     font-family: var(--font-main);
 }
 
+.intro {
+  min-height: 100vh;
+}
+
+/* Intro header layout */
+.intro-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  /* responsive padding */
+  padding: 3rem clamp(1rem, 6vw, 8rem);
+
+  font-family: var(--font-main);
+}
+
 /* Center nav */
 .intro-nav {
-    justify-self: center;
+  justify-self: center;
 }
 
 .intro-nav ul {
-    display: flex;
-    gap: 3rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+  display: flex;
+  gap: clamp(1rem, 3vw, 3rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
+  /* allow wrapping before it breaks */
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .intro-header .logo,
 .intro-header .intro-nav a,
 .intro-header .contact a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
 }
 
 .intro-header .logo:hover,
 .intro-header .intro-nav a:hover,
 .intro-header .contact a:hover {
-    transform: scale(1.15);
+  transform: scale(1.15);
 }
 
-/* Contact button style (lighter than sticky header if you want) */
 .intro-header .contact a {
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 6px;
+  border: 2px solid black;
+  padding: 10px 14px;
+  border-radius: 6px;
+  white-space: nowrap;
 }
 
-#blue {
-    color: var(--primary-bg-color);
-}
+#blue { color: var(--primary-bg-color); }
+#black { color: black; }
 
-#black {
-    color:black
+/* ✅ Mobile layout */
+@media (max-width: 768px) {
+  .intro-header {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .intro-nav {
+    justify-self: stretch;
+  }
+
+  .intro-nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact {
+    justify-self: center;
+  }
 }
