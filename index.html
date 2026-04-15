@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portoflio</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,79 +12,367 @@
 </head>
 <body>
 
-
-
+<!-- ─── HEADER ─── -->
 <header class="intro-header">
   <h2 class="logo"><span id="blue">wit</span><span id="black">zakr</span></h2>
 
-  <!-- Desktop nav -->
   <nav class="intro-nav d-none d-md-block">
     <ul>
       <li><a href="#aboutme"><span id="blue">About</span><span id="black"> me</span></a></li>
       <li><a href="#work"><span id="blue">Featured </span><span id="black">Work</span></a></li>
-      <li><a href="#experience"><span id="blue">Exper</span><span id="black">ience</span></a></li>
+      <li><a href="#experience"><span id="blue">Edu</span><span id="black">cation</span></a></li>
     </ul>
   </nav>
 
-  <!-- Desktop contact -->
   <div class="contact d-none d-md-block">
-    <a href="#contact">Contact</span></a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <!-- Mobile hamburger (only shows < md) -->
-  <button
-    class="hamburger-btn d-md-none"
-    type="button"
-    data-bs-toggle="offcanvas"
-    data-bs-target="#mobileMenu"
-    aria-controls="mobileMenu"
-    aria-label="Open menu"
-  >
+  <button class="hamburger-btn d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open menu">
     <span class="hamburger-lines"></span>
   </button>
 </header>
 
-<!-- Fullscreen Mobile Menu -->
+<!-- Mobile Menu -->
 <div class="offcanvas offcanvas-start mobile-offcanvas d-md-none" tabindex="-1" id="mobileMenu">
   <div class="offcanvas-header">
-
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-
   <div class="offcanvas-body mobile-menu-body">
-    <a class="mobile-link" href="#aboutme" data-bs-dismiss="offcanvas">
-      <span id="blue">About</span><span id="black"> me</span>
-    </a>
-
-    <a class="mobile-link" href="#work" data-bs-dismiss="offcanvas">
-      <span id="blue">Featured </span><span id="black">Work</span>
-    </a>
-
-    <a class="mobile-link" href="#experience" data-bs-dismiss="offcanvas">
-      <span id="blue">Exper</span><span id="black">ience</span>
-    </a>
-
-    <a class="mobile-cta" href="#contact" data-bs-dismiss="offcanvas">
-      Contact
-    </a>
+    <a class="mobile-link" href="#aboutme" data-bs-dismiss="offcanvas"><span id="blue">About</span><span id="black"> me</span></a>
+    <a class="mobile-link" href="#work" data-bs-dismiss="offcanvas"><span id="blue">Featured </span><span id="black">Work</span></a>
+    <a class="mobile-link" href="#experience" data-bs-dismiss="offcanvas"><span id="blue">Edu</span><span id="black">cation</span></a>
+    <a class="mobile-cta" href="#contact" data-bs-dismiss="offcanvas">Contact</a>
   </div>
 </div>
 
 
+<!-- ─── ABOUT ME ─── -->
 <section class="aboutme" id="aboutme">
+  <div class="aboutme-inner">
     <div class="img-container">
-        <img src="img/me.jpeg" alt="profile">
+      <img src="img/me.jpeg" alt="Profile photo">
     </div>
+    <div class="aboutme-text">
+      <h1 class="aboutme-greeting">Hey, I'm <span id="blue">Witzakr</span></h1>
+      <p class="aboutme-bio">
+        I'm a frontend developer who loves turning ideas into clean, interactive web experiences.
+        I care about the small details — smooth animations, accessible markup, and interfaces
+        that just feel right. Currently open to new opportunities.
+      </p>
+      <div class="aboutme-tags">
+        <span class="tag">HTML &amp; CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">React</span>
+        <span class="tag">Bootstrap</span>
+        <span class="tag">UX&UI</span>
+        <span class="tag">Graphic Design</span>
+        <span class="tag tag-sm">Android Studio</span>
+        <span class="tag tag-sm">XML</span>
+        <span class="tag tag-sm">Kotlin</span>
+        <span class="tag tag-sm">C#</span>
+        <span class="tag tag-sm">Unity</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 
+<!-- ─── FEATURED WORK ─── -->
+<section class="work" id="work">
+  <div class="section-inner">
+    <h2 class="section-title"><span id="blue">Featured </span><span id="black">Work</span></h2>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="project-img-placeholder" style="--card-color: #5B96D2;">
+          <span class="project-icon">&#9707;</span>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">Athina's Portfolio</h3>
+          <p class="project-desc">A brief description of this project, what problem it solved and what technologies you used to build it.</p>
+          <div class="project-tags">
+            <span class="tag tag-sm">HTML & CSS</span>
+            <span class="tag tag-sm">JavaScript</span>
+            <span class="tag tag-sm">API</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">Live demo →</a>
+            <a href="#" class="project-link project-link-ghost">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-img-placeholder" style="--card-color: #232B2B;">
+          <span class="project-icon">&#9671;</span>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">18th Semptember Foundation</h3>
+          <p class="project-desc">A brief description of this project, what problem it solved and what technologies you used to build it.</p>
+          <div class="project-tags">
+            <span class="tag tag-sm">HTML & CSS</span>
+            <span class="tag tag-sm">JavaScript</span>
+            <span class="tag tag-sm">API</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">Live demo →</a>
+            <a href="#" class="project-link project-link-ghost">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-img-placeholder" style="--card-color: #5B96D2; opacity: 0.75;">
+          <span class="project-icon">&#9670;</span>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">DPBTSE Virtual Representative</h3>
+          <p class="project-desc">A brief description of this project, what problem it solved and what technologies you used to build it.</p>
+          <div class="project-tags">
+            <span class="tag tag-sm">HTML & CSS</span>
+            <span class="tag tag-sm">JavaScript</span>
+            <span class="tag tag-sm">GPT LLM Model</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">Live demo →</a>
+            <a href="#" class="project-link project-link-ghost">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ─── OTHER PROJECTS ─── -->
+    <div class="other-projects-header">
+      <h3 class="other-projects-title"><span id="blue">Other </span><span id="black">Projects</span></h3>
+      <p class="other-projects-sub">Things I've built outside of frontend — from scripts and tools to data and experiments.</p>
+    </div>
+
+    <div class="other-projects-grid">
+
+      <article class="other-card">
+        <div class="other-card-top">
+          <span class="other-card-category">Android Studio</span>
+          <div class="other-card-links">
+            <a href="#" class="other-icon-link" title="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+            <a href="#" class="other-icon-link" title="External link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card-title">Klooigeld</h4>
+        <p class="other-card-desc">A short description of what this project does and why it's interesting or useful.</p>
+        <div class="project-tags" style="margin-top: auto; padding-top: 1rem;">
+          <span class="tag tag-sm">XML</span>
+          <span class="tag tag-sm">Kotlin</span>
+        </div>
+      </article>
+
+      <article class="other-card">
+        <div class="other-card-top">
+          <span class="other-card-category">VR Development</span>
+          <div class="other-card-links">
+            <a href="#" class="other-icon-link" title="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+            <a href="#" class="other-icon-link" title="External link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card-title">VR Expression Tool</h4>
+        <p class="other-card-desc">A short description of what this project does and why it's interesting or useful.</p>
+        <div class="project-tags" style="margin-top: auto; padding-top: 1rem;">
+          <span class="tag tag-sm">Unity</span>
+          <span class="tag tag-sm">C#</span>
+          <span class="tag tag-sm">XR Toolkit</span>
+          <span class="tag tag-sm">Meta Quest Tools</span>
+        </div>
+      </article>
+
+      <article class="other-card">
+        <div class="other-card-top">
+          <span class="other-card-category">Student Association</span>
+          <div class="other-card-links">
+            <a href="#" class="other-icon-link" title="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+            <a href="#" class="other-icon-link" title="External link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card-title">POLSOC Graphic Design</h4>
+        <p class="other-card-desc">A short description of what this project does and why it's interesting or useful.</p>
+        <div class="project-tags" style="margin-top: auto; padding-top: 1rem;">
+          <span class="tag tag-sm">Adobe Illustrator</span>
+        </div>
+      </article>
+
+      <article class="other-card">
+        <div class="other-card-top">
+          <span class="other-card-category">China Minor</span>
+          <div class="other-card-links">
+            <a href="#" class="other-icon-link" title="External link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card-title">China and the World Economy Research Project</h4>
+        <p class="other-card-desc">A short description of what this project does and why it's interesting or useful.</p>
+        <div class="project-tags" style="margin-top: auto; padding-top: 1rem;">
+          <span class="tag tag-sm">Figma</span>
+          <span class="tag tag-sm">UI/UX</span>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
 
 
+<!-- ─── EXPERIENCE ─── -->
+<section class="experience" id="experience">
+  <div class="section-inner">
+    <h2 class="section-title"><span id="blue">Edu</span><span id="black">cation</span></h2>
+
+    <!-- Degree -->
+    <div class="academic-block">
+      <div class="academic-left">
+        <span class="academic-period">2022 — Present</span>
+        <span class="academic-institution">University Name</span>
+      </div>
+      <div class="academic-right">
+        <h3 class="academic-degree">BSc Computer Science</h3>
+        <p class="academic-desc">Brief description of your programme, focus areas, or anything noteworthy about the degree — e.g. specialisation in web technologies, software engineering, etc.</p>
+        <div class="academic-highlights">
+          <div class="academic-highlight">
+            <span class="highlight-label">GPA / Grade</span>
+            <span class="highlight-value">8.5 / 10</span>
+          </div>
+          <div class="academic-highlight">
+            <span class="highlight-label">Expected graduation</span>
+            <span class="highlight-value">2025</span>
+          </div>
+        </div>
+        <div class="project-tags" style="margin-top: 1rem;">
+          <span class="tag tag-sm">Web Dev</span>
+          <span class="tag tag-sm">Algorithms</span>
+          <span class="tag tag-sm">Databases</span>
+          <span class="tag tag-sm">Networks</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="academic-divider"></div>
+
+    <!-- Relevant courses -->
+    <div class="academic-block">
+      <div class="academic-left">
+        <span class="academic-period">Coursework</span>
+        <span class="academic-institution">Highlights</span>
+      </div>
+      <div class="academic-right">
+        <h3 class="academic-degree">Relevant Courses</h3>
+        <div class="courses-grid">
+          <div class="course-item">
+            <span class="course-dot"></span>
+            <span>Web Technologies &amp; Standards</span>
+          </div>
+          <div class="course-item">
+            <span class="course-dot"></span>
+            <span>Data Structures &amp; Algorithms</span>
+          </div>
+          <div class="course-item">
+            <span class="course-dot"></span>
+            <span>Human-Computer Interaction</span>
+          </div>
+          <div class="course-item">
+            <span class="course-dot"></span>
+            <span>Database Systems</span>
+          </div>
+          <div class="course-item">
+            <span class="course-dot"></span>
+            <span>Software Engineering</span>
+          </div>
+          <div class="course-item">
+            <span class="course-dot"></span>
+            <span>Operating Systems</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="academic-divider"></div>
+
+    <!-- Certifications / self-learning -->
+    <div class="academic-block">
+      <div class="academic-left">
+        <span class="academic-period">Self-taught</span>
+        <span class="academic-institution">Online</span>
+      </div>
+      <div class="academic-right">
+        <h3 class="academic-degree">Certifications &amp; Courses</h3>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-info">
+              <p class="cert-name">The Complete JavaScript Course</p>
+              <p class="cert-provider">Udemy · 2023</p>
+            </div>
+            <a href="#" class="cert-link">View →</a>
+          </div>
+          <div class="cert-item">
+            <div class="cert-info">
+              <p class="cert-name">React — The Complete Guide</p>
+              <p class="cert-provider">Udemy · 2023</p>
+            </div>
+            <a href="#" class="cert-link">View →</a>
+          </div>
+          <div class="cert-item">
+            <div class="cert-info">
+              <p class="cert-name">Responsive Web Design</p>
+              <p class="cert-provider">freeCodeCamp · 2022</p>
+            </div>
+            <a href="#" class="cert-link">View →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    ></script>
-    <script src="script.js"></script>
+<!-- ─── CONTACT ─── -->
+<section class="contact-section" id="contact">
+  <div class="section-inner contact-inner">
+    <h2 class="section-title contact-title"><span id="blue">Let's </span><span id="black">talk</span></h2>
+    <p class="contact-sub">Have a project in mind or just want to say hi? My inbox is always open.</p>
+
+    <a href="mailto:your@email.com" class="contact-cta">Send me an email →</a>
+
+    <div class="contact-socials">
+      <a href="https://github.com/" target="_blank" rel="noopener" class="social-link">GitHub</a>
+      <span class="social-divider">·</span>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
+      <span class="social-divider">·</span>
+      <a href="#" class="social-link">Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="site-footer">
+  <p>Designed &amp; built by <span id="blue">wit</span><span id="black">zakr</span></p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
