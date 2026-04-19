@@ -5,6 +5,83 @@ window.addEventListener('scroll', () => {
 });
 
 
+// ─── SETTINGS PANEL ───
+const settingsToggle = document.getElementById('settingsToggle');
+const settingsPanel  = document.getElementById('settingsPanel');
+const settingsClose  = document.getElementById('settingsClose');
+const settingsReset  = document.getElementById('settingsReset');
+const btnLight       = document.getElementById('btnLight');
+const btnDark        = document.getElementById('btnDark');
+const fontIncrease   = document.getElementById('fontIncrease');
+const fontDecrease   = document.getElementById('fontDecrease');
+const fontSizeDisplay = document.getElementById('fontSizeDisplay');
+
+const FONT_SIZES = [85, 92, 100, 110, 120];
+let fontIndex = 2; // default = 100%
+
+function applyFontSize(index) {
+  const size = FONT_SIZES[index];
+  document.documentElement.style.fontSize = size + '%';
+  fontSizeDisplay.textContent = size + '%';
+  fontDecrease.disabled = index === 0;
+  fontIncrease.disabled = index === FONT_SIZES.length - 1;
+  localStorage.setItem('fontSize', index);
+}
+
+function applyTheme(dark) {
+  document.body.classList.toggle('dark', dark);
+  btnDark.classList.toggle('active', dark);
+  btnLight.classList.toggle('active', !dark);
+  localStorage.setItem('darkMode', dark);
+}
+
+// Toggle panel open/close
+settingsToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const isOpen = settingsPanel.classList.toggle('open');
+  settingsPanel.setAttribute('aria-hidden', !isOpen);
+});
+
+settingsClose.addEventListener('click', () => {
+  settingsPanel.classList.remove('open');
+  settingsPanel.setAttribute('aria-hidden', 'true');
+});
+
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+  if (!settingsPanel.contains(e.target) && e.target !== settingsToggle) {
+    settingsPanel.classList.remove('open');
+    settingsPanel.setAttribute('aria-hidden', 'true');
+  }
+});
+
+// Theme buttons
+btnLight.addEventListener('click', () => applyTheme(false));
+btnDark.addEventListener('click',  () => applyTheme(true));
+
+// Font size buttons
+fontIncrease.addEventListener('click', () => {
+  if (fontIndex < FONT_SIZES.length - 1) applyFontSize(++fontIndex);
+});
+fontDecrease.addEventListener('click', () => {
+  if (fontIndex > 0) applyFontSize(--fontIndex);
+});
+
+// Reset
+settingsReset.addEventListener('click', () => {
+  fontIndex = 2;
+  applyFontSize(fontIndex);
+  applyTheme(false);
+});
+
+// Load saved preferences
+const savedFont = localStorage.getItem('fontSize');
+const savedDark = localStorage.getItem('darkMode') === 'true';
+if (savedFont !== null) fontIndex = parseInt(savedFont);
+applyFontSize(fontIndex);
+applyTheme(savedDark);
+
+
 // ─── MOBILE SCROLL ARROWS ───
 const scrollUp   = document.getElementById('scrollUp');
 const scrollDown = document.getElementById('scrollDown');
