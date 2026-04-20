@@ -581,9 +581,6 @@ body {
 
 /* ─── FEATURED WORK ─── */
 
-.work {
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -795,23 +792,35 @@ body {
   line-height: 1.7;
 }
 
-.contact-cta {
-  display: inline-block;
-  background-color: var(--primary-bg-color);
-  color: whitesmoke;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
-  padding: 14px 28px;
-  border-radius: 8px;
-  transition: transform 0.3s cubic-bezier(.4, 0, .2, 1), opacity 0.2s ease;
+.contact-email-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
   margin-bottom: 2.5rem;
 }
 
-.contact-cta:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
+.contact-email-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.4);
+}
+
+.contact-email-address {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 700;
   color: whitesmoke;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(91, 150, 210, 0.5);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-email-address:hover {
+  color: var(--primary-bg-color);
+  border-color: var(--primary-bg-color);
 }
 
 .contact-socials {
@@ -1145,8 +1154,8 @@ body {
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #bbb;
-  border: 1.5px solid #dde5ef;
+  color: #777;
+  border: 1.5px solid #aaa;
   border-radius: 99px;
   padding: 2px 10px;
 }
@@ -1465,3 +1474,13 @@ body.dark .settings-reset:hover {
 body.dark .site-footer { background-color: #0e1012; }
 
 body.dark .contact-section { background-color: #0e1012; }
+
+body.dark .contact-email-address {
+  color: whitesmoke;
+  border-color: rgba(91, 150, 210, 0.4);
+}
+
+body.dark .contact-email-address:hover {
+  color: var(--primary-bg-color);
+  border-color: var(--primary-bg-color);
+}
